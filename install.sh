@@ -242,7 +242,7 @@ function domain_check() {
     wg-quick down wgcf >/dev/null 2>&1
     print_ok "已关闭 wgcf-warp"
   fi
-  local_ipv4=$(curl -4 ip.sb)
+  local_ipv4=$(curl -4 ifconfig.co)
   local_ipv6=$(curl -6 ip.sb)
   if [[ -z ${local_ipv4} && -n ${local_ipv6} ]]; then
     # 纯IPv6 VPS，自动添加DNS64服务器以备acme.sh申请证书使用
